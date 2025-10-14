@@ -1,0 +1,292 @@
+/* --- Google Fonts & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Bebas+Neue&display=swap');
+
+:root {
+    --netflix-red: #E50914;
+    --netflix-black: #0c0c0c;
+    --text-white: #FFFFFF;
+    --text-grey: #a1a1a1;
+    --card-bg: #1a1a1a;
+    --font-logo: 'Bebas Neue', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --glow-color: rgba(229, 9, 20, 0.5);
+}
+
+/* --- Global Styles --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background-color: var(--netflix-black);
+    font-family: var(--font-body);
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+.brand-logo {
+    font-family: var(--font-logo); color: var(--netflix-red);
+    font-size: 2rem; letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+/* --- Splash Screen --- */
+#splash-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: #000; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; z-index: 1000;
+    transition: opacity 0.5s ease-out;
+}
+.splash-logo {
+    font-family: var(--font-logo); color: var(--netflix-red);
+    font-size: 4rem; letter-spacing: 4px; margin-bottom: 2rem;
+    text-shadow: 0 0 15px var(--glow-color);
+}
+#splash-screen p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    color: var(--text-grey);
+    transition: transform 0.3s ease;
+}
+.profile-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.profile span {
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+.profile:hover {
+    transform: scale(1.05);
+}
+.profile:hover .profile-icon {
+    border-color: var(--text-white);
+}
+.profile:hover span {
+    color: var(--text-white);
+}
+
+#open-invitation {
+    margin-top: 3rem; background: none; border: 1px solid var(--text-grey);
+    color: var(--text-grey); padding: 10px 20px; font-size: 1rem; cursor: pointer;
+    transition: all 0.3s ease;
+}
+#open-invitation:hover {
+    background-color: var(--netflix-red); color: var(--text-white);
+    border-color: var(--netflix-red); box-shadow: 0 0 20px var(--glow-color);
+    transform: scale(1.05);
+}
+
+/* --- Hero Poster Section --- */
+.hero-poster {
+    height: 100vh; background-size: cover; background-position: center;
+    position: relative; display: flex; align-items: flex-end; padding: 3rem;
+    overflow: hidden; background-attachment: fixed;
+}
+#tsparticles {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+}
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
+    background: linear-gradient(to top, rgba(12, 12, 12, 1) 15%, rgba(12, 12, 12, 0) 80%);
+}
+.hero-content { position: relative; z-index: 3; }
+.hero-content h1, .hero-content .tagline { text-shadow: 2px 2px 10px rgba(0,0,0,0.7); }
+.hero-content h1 { font-size: 4rem; margin: 0; }
+.hero-content .tagline { font-size: 3rem; font-weight: normal; margin-top: -1rem; }
+.coming-soon-badge {
+    display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem;
+}
+.coming-soon-badge span {
+    background-color: var(--netflix-red); padding: 8px 15px; border-radius: 5px;
+    font-weight: 700; font-size: 1rem; box-shadow: 0 0 15px var(--glow-color);
+    flex-shrink: 0;
+}
+.coming-soon-badge p { font-size: 1.2rem; font-weight: 500; margin: 0; }
+.hashtags { margin-top: 2.5rem; }
+.hashtags span {
+    border: 1px solid var(--text-grey); padding: 1px 1px; border-radius: 20px;
+    font-size: 0.9rem; margin-right: 0.5rem; color: var(--text-grey);
+    transition: all 0.3s ease;
+}
+.hashtags span:hover { background-color: var(--text-white); color: #000; }
+
+/* --- Main Content Layout --- */
+.container { 
+    max-width: 800px; margin: 0 auto; padding: 2rem; 
+    background-color: var(--netflix-black); position: relative; z-index: 5;
+}
+.content-section { margin-bottom: 5rem; }
+.section-title {
+    font-size: 2.2rem; font-weight: 700; margin-bottom: 2rem;
+    border-left: 4px solid var(--netflix-red); padding-left: 1rem;
+}
+
+/* --- Breaking News --- */
+.news-content img { width: 100%; border-radius: 8px; margin-bottom: 1rem; }
+.news-content p { color: var(--text-grey); line-height: 1.8; margin-bottom: 1rem; }
+
+/* --- Bride & Groom --- */
+.couple-container { display: flex; gap: 1.5rem; }
+.person-card {
+    background-color: var(--card-bg); border-radius: 8px; overflow: hidden;
+    text-align: center; padding-bottom: 1.5rem; flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+}
+.person-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.person-card img {
+    width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover;
+    transform: translateZ(20px);
+}
+.person-card h3 { margin-top: 1rem; font-size: 1.5rem; transform: translateZ(15px); }
+.person-card p { color: var(--text-grey); padding: 0 1rem; font-size: 0.9rem; }
+
+/* --- Timeline & Location with Glassmorphism --- */
+.timeline-card {
+    display: flex; gap: 1.5rem; border-radius: 12px;
+    padding: 1.5rem; margin-bottom: 1.5rem; align-items: center;
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.timeline-card:hover { transform: translateY(-5px); background: rgba(30, 30, 30, 0.8); }
+.timeline-card img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; }
+.event-tag {
+    background-color: var(--netflix-red); color: white; padding: 5px 12px;
+    font-size: 0.9rem; border-radius: 5px; font-weight: 500;
+}
+.timeline-details h4 { margin: 0.8rem 0; font-size: 1.2rem; }
+.time-tags span {
+    background-color: #333; padding: 4px 10px; border-radius: 5px;
+    font-size: 0.8rem; color: var(--text-grey);
+}
+.gmaps-link { color: var(--text-white); font-weight: 700; text-decoration: none; transition: color 0.3s ease; }
+.gmaps-link:hover { color: var(--netflix-red); }
+
+/* --- Guestbook Section --- */
+.guest-form-container {
+    background-color: var(--card-bg); padding: 2rem; border-radius: 8px; margin-bottom: 2rem;
+}
+.guest-form-container h3 {
+    text-align: left; margin-bottom: 1.5rem; font-size: 1.5rem;
+}
+.guest-form-container form {
+    display: flex; flex-direction: column; gap: 1rem;
+}
+.guest-form-container input,
+.guest-form-container textarea {
+    background-color: #333; border: 1px solid #555;
+    color: var(--text-white); padding: 12px; border-radius: 5px;
+    font-family: var(--font-body); font-size: 1rem; width: 100%;
+}
+.guest-form-container input:focus,
+.guest-form-container textarea:focus { outline: none; border-color: var(--netflix-red); }
+.guest-form-container button {
+    background-color: var(--netflix-red); color: var(--text-white); border: none;
+    padding: 12px; border-radius: 5px; cursor: pointer; font-weight: bold;
+    font-size: 1rem; transition: all 0.3s ease;
+    align-self: flex-start; min-width: 150px;
+}
+.guest-form-container button:hover {
+    background-color: #ff1f2c; box-shadow: 0 0 20px var(--glow-color);
+    transform: scale(1.02);
+}
+.messages-display-container { display: flex; flex-direction: column; gap: 1rem; }
+.message-card {
+    background-color: var(--card-bg); padding: 1.5rem; border-radius: 8px;
+    border-left: 4px solid var(--netflix-red); transition: transform 0.3s ease;
+}
+.message-card:hover { transform: translateX(5px); }
+.message-card h4 { font-size: 1.1rem; font-weight: 700; }
+.message-card p { margin: 0.5rem 0; font-style: italic; color: var(--text-grey); }
+.message-card span { font-size: 0.8rem; color: #888; }
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center; padding: 3rem 2rem;
+    background-color: var(--netflix-black); position: relative; z-index: 5;
+}
+.social-icons a {
+    color: white; font-size: 1.8rem; margin: 0 1rem;
+    text-decoration: none; transition: all 0.3s ease;
+}
+.social-icons a:hover { color: var(--netflix-red); transform: translateY(-3px); }
+
+
+/******************************************/
+/* --- RESPONSIVE DESIGN FOR MOBILE --- */
+/******************************************/
+@media (max-width: 768px) {
+    /* PENYESUAIAN HERO SECTION */
+    .hero-poster {
+        height: 90vh; /* Sedikit lebih pendek agar konten bawah terlihat */
+        background-position: center top; /* Fokus ke atas foto */
+        padding: 2rem 1.5rem; /* Padding lebih kecil */
+    }
+    .hero-content h1 {
+        font-size: 2.8rem; /* Font judul lebih kecil */
+        line-height: 1.1; /* Jarak antar baris lebih rapat */
+    }
+    .hero-content .tagline {
+        font-size: 2rem;
+        margin-top: -0.5rem; /* Didekatkan ke judul */
+    }
+    
+    /* PENYESUAIAN LAYOUT & JARAK */
+    .container {
+        padding: 1.5rem; /* Padding utama lebih kecil */
+    }
+    .content-section {
+        margin-bottom: 3rem; /* Jarak antar section diperkecil */
+    }
+
+    /* PENYESUAIAN TYPOGRAPHY UMUM */
+    .section-title {
+        font-size: 1.8rem; /* Judul section lebih kecil */
+        margin-bottom: 1.5rem;
+    }
+    .person-card h3 {
+        font-size: 1.3rem; /* Nama mempelai lebih kecil */
+    }
+    .person-card p {
+        font-size: 0.85rem; /* Info orang tua lebih kecil */
+    }
+    .timeline-details h4 {
+        font-size: 1.1rem; /* Judul acara (Akad/Resepsi) lebih kecil */
+    }
+
+    /* PENYESUAIAN LAYOUT KARTU */
+    .couple-container {
+        flex-direction: column; /* Kartu mempelai jadi vertikal */
+        gap: 1.5rem;
+    }
+    .timeline-card {
+        flex-direction: column; /* Kartu timeline jadi vertikal */
+        text-align: center;
+        padding: 1rem; /* Padding di dalam kartu dikurangi */
+    }
+    .timeline-card img {
+        width: 100%; /* Gambar timeline memenuhi lebar kartu */
+        height: 180px;
+    }
+    
+    /* PENYESUAIAN FOOTER */
+    .main-footer {
+        padding: 2.5rem 1rem;
+    }
+    .main-footer h3 {
+        font-size: 1.5rem;
+    }
+    .social-icons a {
+        font-size: 1.6rem;
+        margin: 0 0.8rem;
+    }
+}
