@@ -1,4 +1,8 @@
 {
-  "name": "netflix-wedding",
-  "version": "1.0.0"
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.php"
+    }
+  ]
 }
